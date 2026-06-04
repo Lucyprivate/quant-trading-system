@@ -1,0 +1,19 @@
+name: Safe Demo Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run safe toy backtest
+        run: python demo/toy_backtest.py --input demo/sample_market_data.csv
+      - name: Run demo test
+        run: python -m unittest discover -s demo -p "test_*.py"
