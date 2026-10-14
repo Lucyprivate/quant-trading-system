@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the high-level architecture of the AI-native quant trading system.
+This document describes the architecture of the private Python quantitative trading system.
 
 ## Public vs private boundary
 
@@ -64,16 +64,16 @@ Responsibilities:
 - Fetch quotes and market snapshots
 - Normalize raw market data
 - Record price data for offline analysis
-- Provide fallback historical price behavior when live data is unavailable
+- Use historical prices as a fallback when live data is unavailable
 
 ## ML signal layer
 
 Responsibilities:
 
-- Evaluate candidate trades using score thresholds
+- Evaluate candidate trades with score thresholds
 - Attach model score, allow/deny decision, and reason fields
-- Support auditability for later review
-- Avoid letting low-confidence signals reach execution
+- Keep decision fields for later review
+- Block low-confidence signals before execution
 
 ## Strategy engine
 
@@ -96,7 +96,7 @@ Responsibilities:
 
 ## Execution layer
 
-The private system migrated from `ib_insync` to `ib_async`, which better fits async runtime and bot/monitoring workflows.
+The private system migrated from `ib_insync` to `ib_async` for its async runtime and bot/monitoring workflows.
 
 Responsibilities:
 

@@ -1,6 +1,6 @@
 # Backtest Results — Redacted Template
 
-This document is a safe template for publishing performance evidence without exposing proprietary trading logic.
+Use this template to publish performance evidence while keeping proprietary trading logic private.
 
 ## Publication policy
 
@@ -34,7 +34,7 @@ Do not publish:
 
 ## Private backtest features documented in the source snapshot
 
-The private backtesting documentation includes support for:
+The private backtesting documentation lists these features:
 
 - slippage modeling
 - fixed and bps commissions
@@ -46,4 +46,4 @@ The private backtesting documentation includes support for:
 - technical filters
 - walk-forward parameter stability checks
 
-These are more important for public credibility than publishing a single overfit return number.
+These execution assumptions give context for performance results. A single overfit return number does not show those limits.

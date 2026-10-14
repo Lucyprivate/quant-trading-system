@@ -1,6 +1,6 @@
 # Changelog
 
-This changelog summarizes high-level milestones from the private Git history.
+This changelog records milestones from the private Git history.
 
 | Date | Milestone |
 | --- | --- |
@@ -26,4 +26,4 @@ This changelog summarizes high-level milestones from the private Git history.
 | 2026-06-03 | Split BTC strategy modules. |
 | 2026-06-03 | Split Telegram bot commands. |
 
-The public repository documents these milestones without publishing sensitive source code, account data, or proprietary trading parameters.
+The public repository records these milestones. Sensitive source code, account data, and proprietary trading parameters remain private.

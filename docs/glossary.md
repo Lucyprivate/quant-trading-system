@@ -1,12 +1,10 @@
+<a id="ai-native-development"></a>
+
 # Glossary
-
-## AI-native development
-
-A workflow where AI agents are used as coding assistants, reviewers, refactoring partners, and documentation helpers while the human operator controls architecture and risk.
 
 ## Backtesting
 
-Testing a trading strategy against historical data to evaluate how it might have behaved.
+A test of a trading strategy on historical data to evaluate its simulated behavior.
 
 ## Score-first gating
 
@@ -14,7 +12,7 @@ A trade-entry design where candidate trades must pass a scoring/filtering layer 
 
 ## ML signal filter
 
-A model-like scoring layer used to reduce low-quality trade signals before they reach the strategy engine.
+A model-like scoring layer that filters low-quality trade signals before they reach the strategy engine.
 
 ## Risk guard
 
@@ -22,11 +20,11 @@ A safety layer that blocks or limits trades based on position size, exposure, co
 
 ## God file
 
-A large file that contains too many responsibilities, making it hard to maintain, review, and test.
+A large file with too many responsibilities. It is hard to maintain, review, and test.
 
 ## Paper trading
 
-Simulated trading using market-like execution but without real capital at risk.
+Simulated trading with market-like execution and no real capital at risk.
 
 ## SQLite
 
@@ -34,7 +32,7 @@ A lightweight relational database suitable for local storage and structured logs
 
 ## SQLAlchemy
 
-A Python ORM/library that provides structured database access without writing raw SQL everywhere.
+A Python ORM/library for structured database access. It reduces the need for raw SQL.
 
 ## Telegram bot
 

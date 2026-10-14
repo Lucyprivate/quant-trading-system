@@ -1,8 +1,10 @@
-# AI-native Quant Trading System
+<a id="ai-native-quant-trading-system"></a>
 
-> A public engineering case study and safe demo for a private AI-assisted Python quant trading system.
+# Quant Trading System
 
-This repository documents the journey from manual IBKR limit-order trading to a modular, AI-assisted quantitative trading system. It does **not** publish live trading source code, brokerage credentials, account data, or proprietary strategy parameters. Instead, it presents the architecture, development timeline, refactoring process, and a small safe demo that can be run without broker access.
+A public engineering case study and safe demo for a private Python quantitative trading system.
+
+This repository documents the move from manual IBKR limit-order trading to a modular Python quantitative trading system. It includes architecture, development history, refactoring notes, and a small demo that runs without broker access. Live trading source code, brokerage credentials, account data, and proprietary strategy parameters remain private.
 
 ## Project status
 
@@ -35,9 +37,9 @@ For more details, see [QUICK_START.md](QUICK_START.md).
 
 ## Why this project exists
 
-The project began with a practical problem: manual limit-order trading on IBKR did not require constant screen watching, but the psychological pressure of pending orders still created late-night monitoring and decision fatigue.
+Manual IBKR limit-order trading did not need constant screen watching. Pending orders still caused late-night monitoring and decision fatigue.
 
-I wanted to turn mathematical reasoning and market observation into an automated system. Since I did not start with a traditional programming background, AI coding agents became the bridge between trading logic and software engineering. The project grew from manual SSH copy/paste workflows into a Codex-assisted Python system running on an Azure Ubuntu VM.
+I wanted to turn mathematical reasoning and market observation into an automated system. I started without a traditional programming background. Development moved from manual SSH copy/paste workflows to a Python system on an Azure Ubuntu VM.
 
 ## Private system capabilities
 
@@ -47,7 +49,7 @@ The private system includes:
 - BTC mock-trading module
 - Telegram bot for runtime, order, and position updates
 - Backtesting and performance reporting
-- ML signal gating and score-first trade entry logic
+- Machine learning (ML) signal gating and score-first trade entry logic
 - Risk controls, cooldowns, position caps, and runtime self-healing
 - Ongoing data-layer migration from CSV/JSON to SQLite/SQLAlchemy
 
@@ -71,8 +73,8 @@ The uploaded private Git history shows:
 | **2026-05-29** | Reduced Telegram noise and enabled ML filters for both stock and BTC strategies. |
 | **2026-05-30** | Added historical price fallback, simplified BTC status, fixed performance cron jobs, and improved recovery/health behavior. |
 | **2026-05-31** | Added BTC runtime error recovery and Telegram IB connection self-healing. |
-| **2026-06-01** | Implemented score-first entry logic for stocks and BTC; synchronized stock backtests; added audit fields. |
-| **2026-06-02** | Replaced `ib_insync` with `ib_async`; improved BTC fill display; added BTC technical cache worker. |
+| **2026-06-01** | Implemented score-first entry logic for stocks and BTC. Synchronized stock backtests and added audit fields. |
+| **2026-06-02** | Replaced `ib_insync` with `ib_async`. Improved BTC fill display and added the BTC technical cache worker. |
 | **2026-06-03** | Split strategy modules, BTC strategy modules, tests, and Telegram bot commands. |
 
 ## Architecture overview
@@ -106,14 +108,11 @@ flowchart TD
 - [Redacted backtest result template](docs/backtest-results-redacted.md)
 - [Glossary](docs/glossary.md)
 
-## AI-assisted development
+<a id="ai-assisted-development"></a>
 
-AI assistance was used as a development accelerator, not as a replacement for system design. My role focused on defining trading logic, reviewing architecture, enforcing test-driven refactoring, checking risks, and guiding the system from a monolithic prototype into modular components.
+## Development scope
 
-The workflow eventually evolved into a dual-agent model:
-
-- **Advisor window:** proposes architecture, risks, and refactoring strategy without touching code.
-- **Executor window:** performs approved changes, runs tests, and commits incremental progress.
+My role covered trading logic, architecture review, test-driven refactoring, and risk checks. I guided the move from a monolithic prototype to modules. The private Git history records the implementation changes.
 
 ## Disclaimer
 

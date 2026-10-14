@@ -16,4 +16,4 @@ pandas_market_calendars
 - `requests` supports HTTP calls such as Telegram API interactions.
 - `pandas_market_calendars` supports exchange calendar logic.
 
-The public demo does not require these dependencies because it intentionally avoids live broker/API access.
+The public demo does not need these dependencies. It has no live broker/API access.

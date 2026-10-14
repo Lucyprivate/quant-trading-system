@@ -1,6 +1,6 @@
 # Safe Demo Backtest
 
-The public demo is designed to make the repository runnable without exposing private trading logic.
+The public demo runs without exposing private trading logic.
 
 ## Why a toy demo?
 
@@ -17,13 +17,15 @@ flowchart LR
     D --> F[Equity Curve]
 ```
 
-## What it demonstrates
+<a id="what-it-demonstrates"></a>
 
-- How a market row is loaded
-- How an ML-like score threshold can gate a trade
-- How a simple risk budget limits order size
-- How mock orders can produce trade/equity outputs
-- How a repository can provide a runnable artifact without exposing real strategy logic
+## What the demo shows
+
+- Load a market row
+- Gate a trade with an ML-like score threshold
+- Limit order size with a simple risk budget
+- Produce trade/equity outputs from mock orders
+- Keep real strategy logic private while giving readers a runnable example
 
 ## What it intentionally omits
 

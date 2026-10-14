@@ -1,6 +1,6 @@
 # Contributing
 
-This is primarily a portfolio and engineering case-study repository. Contributions are welcome for documentation improvements, typo fixes, diagrams, and general engineering suggestions.
+This repository contains a portfolio and engineering case study. Contributions can improve documentation, fix typos, revise diagrams, or suggest engineering changes.
 
 ## Welcome
 
@@ -8,7 +8,7 @@ This is primarily a portfolio and engineering case-study repository. Contributio
 - Architecture diagram suggestions
 - Refactoring notes
 - Security and redaction suggestions
-- Educational explanations around async Python, testing, or data storage
+- Explanations of async Python, testing, or data storage
 
 ## Not accepted
 
@@ -20,7 +20,8 @@ This is primarily a portfolio and engineering case-study repository. Contributio
 
 ## How to contribute
 
-1. Open an issue describing the suggested improvement.
+1. Open an issue that describes the improvement.
 2. Keep all examples generic and non-sensitive.
-3. Avoid including real account, position, or order information.
-4. Submit a pull request only after confirming no secrets are included.
+3. Exclude real account, position, and order information.
+4. Make sure the examples contain no secrets.
+5. Submit the pull request.

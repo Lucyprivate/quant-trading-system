@@ -2,7 +2,7 @@
 
 ## Current / legacy storage pattern
 
-The private system has used CSV and JSON files for runtime logs and strategy state. This was useful during rapid AI-assisted prototyping because files are easy to inspect, append, and debug.
+The private system used CSV and JSON files for runtime logs and strategy state. Files were easy to inspect, append, and debug during prototyping.
 
 Observed storage responsibilities include:
 
@@ -14,7 +14,7 @@ Observed storage responsibilities include:
 
 ## Why CSV/JSON becomes limiting
 
-CSV/JSON is useful early, but it becomes fragile as the system grows:
+CSV/JSON works for early prototypes. As the system grows, it creates these limits:
 
 - Hard to query across symbols and date ranges
 - No schema enforcement
@@ -25,7 +25,7 @@ CSV/JSON is useful early, but it becomes fragile as the system grows:
 
 ## Target direction
 
-The next public-facing architecture goal is to migrate runtime storage to SQLite with SQLAlchemy.
+The next storage goal is SQLite with SQLAlchemy.
 
 ```mermaid
 flowchart LR
@@ -56,12 +56,12 @@ flowchart LR
 4. Replace one storage path at a time.
 5. Keep old export-to-CSV helpers for inspection.
 6. Add regression tests after each migration step.
-7. Avoid changing function inputs/outputs during storage migration.
+7. Keep function inputs/outputs unchanged during storage migration.
 
 ## Safety rules
 
 - Never migrate and refactor strategy logic in the same commit.
-- Keep old files until migration is validated.
+- Keep old files until you check the migration.
 - Use Git commits after every passing step.
 - Add schema versioning before live use.
-- Redact account data before using any logs in public documentation.
+- Redact account data before you put logs in public documentation.

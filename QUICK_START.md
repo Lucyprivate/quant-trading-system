@@ -1,6 +1,6 @@
 # Quick Start
 
-This guide shows how to run the **safe public demo**. It does not connect to IBKR, Longbridge, Telegram, Azure, or any live trading service.
+Run the **safe public demo** with this guide. It does not connect to IBKR, Longbridge, Telegram, Azure, or any live trading service.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ python3 demo/toy_backtest.py \
 
 ## 4. Expected output
 
-The exact numbers may change if you edit the sample data, but the current sample data should produce:
+If you edit the sample data, the numbers can change. The current sample data has this expected output:
 
 ```text
 Toy backtest summary
@@ -60,7 +60,7 @@ open_positions: 0
 
 ## 5. What this demo proves
 
-The demo is intentionally simple. It demonstrates the engineering shape of the private system without exposing proprietary strategy logic:
+The simple demo shows the private system's workflow. It keeps proprietary strategy logic private:
 
 * CSV ingestion
 * score-first trade filtering
@@ -94,4 +94,4 @@ The private project includes a fuller backtesting engine with options for:
 * technical filters
 * walk-forward parameter stability checks
 
-Those features are documented here as an engineering case study, not published as a trading product.
+This engineering case study documents those features. It is not a trading product.

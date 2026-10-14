@@ -2,9 +2,9 @@
 
 ## Background
 
-The project began as an AI-assisted trading prototype. Early development prioritized getting the system to run: paper trading, order placement, Telegram alerts, strategy iteration, and BTC mock trading.
+The project started as a trading prototype. Early work covered paper trading, order placement, Telegram alerts, strategy iteration, and BTC mock trading.
 
-As features accumulated, the strategy logic became concentrated in large strategy files. At one point, the system contained multi-thousand-line strategy files that behaved like “god files”: too many responsibilities, too many hidden dependencies, and too much risk for future maintenance.
+As features grew, strategy logic accumulated in large files. Some multi-thousand-line strategy files became “god files” with too many responsibilities and hidden dependencies. That concentration increased maintenance risk.
 
 ## Problem
 
@@ -12,14 +12,16 @@ A monolithic strategy file creates several risks:
 
 - Difficult to reason about strategy behavior
 - High chance of accidental side effects during edits
-- AI agents may modify unrelated sections while trying to implement a feature
+- Feature edits can change unrelated sections
 - Harder to test small components
 - Harder for a human maintainer to review logic
 - Increased chance of duplicated utilities and repeated decision logic
 
+<a id="dual-agent-governance-model"></a>
+
 ## Refactoring goal
 
-The goal was not to rewrite everything from scratch. The goal was to preserve existing behavior while improving structure.
+The refactor aimed to preserve existing behavior and improve structure. It did not replace the whole system.
 
 Core principles:
 
@@ -27,23 +29,7 @@ Core principles:
 - Split by responsibility, not by random file size
 - Run tests after each meaningful change
 - Use Git commits as restore points
-- Let AI execute narrow tasks, but keep architecture decisions human-reviewed
-
-## Dual-agent governance model
-
-```mermaid
-flowchart LR
-    A[Advisor Agent] --> B[Architecture Plan]
-    B --> C[Human Review]
-    C --> D[Executor Agent]
-    D --> E[Code Changes]
-    E --> F[Tests / Git Commit]
-    F --> C
-```
-
-- **Advisor Agent:** proposes refactoring plans, module boundaries, risks, and review questions.
-- **Executor Agent:** performs approved edits in the codebase.
-- **Human operator:** confirms the plan, checks output, requests tests, and controls Git commits.
+- Limit each edit to a narrow task and review architecture decisions
 
 ## Before
 
@@ -90,15 +76,15 @@ src/bots/
 ## Results
 
 - Strategy logic became easier to navigate.
-- Tests were split into more focused modules.
-- Telegram bot commands were separated from the core bot facade.
-- BTC strategy modules were split into focused components.
+- Tests moved into focused modules.
+- Telegram bot commands moved out of the core bot facade.
+- BTC strategy modules became focused components.
 - Future SQLite/SQLAlchemy migration became easier because data access boundaries were clearer.
 
 ## Lessons learned
 
-1. AI can write code quickly, but architecture still needs human supervision.
+1. Review architecture decisions.
 2. A passing test suite is the best safety net for aggressive refactoring.
-3. “One agent writes, another agent reviews” reduces blind spots.
-4. Git commits are not optional; they are the recovery system.
-5. Refactoring is not just about fewer lines; it is about clearer responsibility boundaries.
+3. Separate editing from review to reduce blind spots.
+4. Keep Git commits as recovery points.
+5. Refactor for clear responsibilities, not only fewer lines.

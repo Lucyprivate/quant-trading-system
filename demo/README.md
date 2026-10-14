@@ -1,6 +1,6 @@
 # Demo
 
-This directory contains a safe, self-contained toy backtest. It does not connect to any broker or live market data service.
+This directory contains a self-contained toy backtest. It does not connect to a broker or live market data service.
 
 ## Run
 
@@ -24,4 +24,4 @@ The demo mirrors the shape of the private system:
 4. Execute a mock order.
 5. Track equity and trades.
 
-It is intentionally simple and should not be interpreted as a real trading strategy.
+This simple toy shows the workflow. It is not a real trading strategy.

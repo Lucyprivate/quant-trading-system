@@ -1,10 +1,10 @@
 # Security Policy
 
-This repository documents a personal trading system and does **not** contain live trading source code, production credentials, or proprietary strategy parameters.
+This repository documents a personal trading system. It does **not** contain live trading source code, production credentials, or proprietary strategy parameters.
 
 ## Redaction policy
 
-The following information is intentionally excluded:
+The repository excludes:
 
 - API keys and access tokens
 - IBKR account identifiers
@@ -19,10 +19,10 @@ The following information is intentionally excluded:
 ## Safe publication rules
 
 - Never commit `.env` files.
-- Never commit screenshots unless account data and tokens are fully redacted.
+- Commit screenshots only after you redact all account data and tokens.
 - Never publish private keys, webhook URLs, chat IDs, or broker session information.
 - Keep trading strategy parameters and production execution logic private.
-- Treat all logs as sensitive until reviewed and redacted.
+- Keep all logs private until you review and redact them.
 
 ## Disclaimer
 
@@ -30,4 +30,4 @@ Nothing in this repository constitutes financial advice, investment advice, or a
 
 ## Reporting issues
 
-If you find a security issue in the public documentation, please open an issue or contact the repository owner.
+If you find a security issue in the public documentation, open an issue or contact the repository owner.
